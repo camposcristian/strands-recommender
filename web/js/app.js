@@ -3,6 +3,6 @@ angular.module('Strands Demo', [])
     $http.get("/data/products.json").success(function(products) {
       var url = $location.absUrl();
       var id = parseInt(url.slice(url.indexOf("id")+3));
-      $scope.product = products[id];
+      $scope.product = products[id-1];
     });
   }]);
