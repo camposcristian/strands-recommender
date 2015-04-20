@@ -1,0 +1,8 @@
+{
+  "name": "strands-recommender",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt-contrib-connect": "^0.10.1",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
