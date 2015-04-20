@@ -1,85 +1,85 @@
 [{
         "id": 1,
         "name": "black shoe",
-        "category": "shoes",
-        "price": 12,
-        "url": "detail/1",
+        "categories":[ "shoes"],
+        "price": 50,
+        "url": "detail.html?id=1",
         "img": "images/shoe_pic1.jpg"
 }, {
         "id": 2,
         "name": "dark-brown shoe",
-        "category": "shoes",
-        "price": 12,
-        "url": "detail/2",
+        "categories":[ "shoes"],
+        "price": 40,
+        "url": "detail.html?id=2",
         "img": "images/shoe_pic2.jpg"
 }, {
         "id": 3,
         "name": "brown shoe",
-        "category": "shoes",
-        "price": 12,
-        "url": "detail/3",
+        "categories":[ "shoes"],
+        "price": 90,
+        "url": "detail.html?id=3",
         "img": "images/shoe_pic3.jpg"
 }, {
         "id": 4,
         "name": "brown fancy",
-        "category": "shoes",
-        "price": 12,
-        "url": "detail/4",
+        "categories":[ "shoes"],
+        "price": 45,
+        "url": "detail.html?id=4",
         "img": "images/shoe_pic4.jpg"
 }, {
         "id": 5,
         "name": "light brown",
-        "category": "shoes",
-        "price": 12,
-        "url": "detail/5",
+        "categories":[ "shoes"],
+        "price": 65,
+        "url": "detail.html?id=5",
         "img": "images/shoe_pic5.jpg"
 }, {
         "id": 6,
         "name": "blue shoe",
-        "category": "shoes",
-        "price": 12,
-        "url": "detail/6",
+        "categories":[ "shoes"],
+        "price": 85,
+        "url": "detail.html?id=6",
         "img": "images/shoe_pic6.jpg"
 }, {
         "id": 7,
         "name": "green handbag",
-        "category": "handbags",
-        "price": 12,
-        "url": "detail/7",
+        "categories":[ "handbags"],
+        "price": 65,
+        "url": "detail.html?id=7",
         "img": "images/w_pic1.jpg"
 }, {
         "id": 8,
         "name": "blue handbag",
-        "category": "handbags",
-        "price": 12,
-        "url": "detail/8",
+        "categories":[ "handbags"],
+        "price": 55,
+        "url": "detail.html?id=8",
         "img": "images/w_pic2.jpg"
 }, {
         "id": 9,
         "name": "white handbag",
-        "category": "handbags",
-        "price": 12,
-        "url": "detail/9",
+        "categories":[ "handbags"],
+        "price": 57,
+        "url": "detail.html?id=9",
         "img": "images/w_pic3.jpg"
 }, {
         "id": 10,
         "name": "orange handbag",
-        "category": "handbags",
-        "price": 12,
-        "url": "detail/10",
+        "categories":[ "handbags"],
+        "price": 76,
+        "url": "detail.html?id=10",
         "img": "images/w_pic4.jpg"
 }, {
         "id": 11,
         "name": "black handbag",
-        "category": "handbags",
-        "price": 12,
-        "url": "detail/11",
+        "categories":[ "handbags"],
+        "price": 67,
+        "url": "detail.html?id=11",
         "img": "images/w_pic5.jpg"
 }, {
         "id": 12,
         "name": "brown handbag",
-        "category": "handbags",
-        "price": 12,
-        "url": "detail/12",
+        "categories":[ "handbags"],
+        "price": 68,
+        "url": "detail.html?id=12",
         "img": "images/w_pic6.jpg"
 }]
