@@ -235,8 +235,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 			   	 </div>
 			   	</div>
+
+			   	
+
+
 			   	
 			   	<div class="clear"></div>
+			   	<div class="strandsRecs" tpl="PROD-1" item="{{product.id}}"></div> 
 			   	<!-- start tabs -->
 				   	<section class="tabs">
 		            <input id="tab-1" type="radio" name="radio-set" class="tab-selector-1" checked="checked">
@@ -423,6 +428,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 		<div class="clear"></div>
 	</div>
+
+
+
+
+<!-- Library placed at the end of the HTML Document, before the /body closing tag -->
+
+<script type="text/javascript" 
+   src="https://bizsolutions.strands.com/sbsstatic/js/sbsLib-1.0.min.js"></script>
+<script type="text/javascript">
+try{
+  //Event Definitions
+  //Make sure first that the array is defined
+  if (typeof StrandsTrack=="undefined"){StrandsTrack=[];}
+  //Item was visisted
+  StrandsTrack.push({
+    event:"visited",
+    item: "1"
+  });
+
+  //Launch processing
+  SBS.Worker.go("0eJkBiACnt");
+} catch (e){};
+</script>
+
+
+
+
 </div>
 </div>
 </body>
