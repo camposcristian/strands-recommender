@@ -58,3 +58,4 @@ node_modules/
 ####################
 sftp-config*
 *.sublime-*
+web/bower_components/

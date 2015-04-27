@@ -1,0 +1,27 @@
+{
+  "name": "retail-demo",
+  "version": "0.0.1",
+  "homepage": "https://github.com/camposcristianeze/strands-recommender",
+  "authors": [
+    "Cristian Campos <campos@strands.com>"
+  ],
+  "description": "A demo for an ecommerce retail website",
+  "main": "index.html",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node",
+    "yui"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ngcart": "~0.0.3-rc.2"
+  }
+}
