@@ -10,19 +10,17 @@ module.exports = function(grunt) {
 			}
 		},
 		watch: {
-			html: {
-				files: ['/web/*.html'],
-			},
-			js: {
-				files: ['/web/js/*.js'],
+			files: ['web/*.html', 'web/js/*.js', 'web/css/*.css'],
+			options: {
+				livereload: true
 			}
 		}
 	});
-    grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-connect');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	grunt.registerTask('serve', [
 		'connect:server',
 		'watch'
-		]);
+	]);
 };

@@ -5,9 +5,9 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE HTML>
-<html>
+<html ng-app="Strands Demo">
 <head>
-<title>The Aditii Website Template | Handbags :: w3layouts</title>
+<title>Strands Retail | Handbags</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
@@ -17,6 +17,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- start top_js_button -->
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/ngcart/dist/ngCart.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
    <script type="text/javascript">
 		jQuery(document).ready(function($) {
 			$(".scroll").click(function(event){		
@@ -25,8 +28,29 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			});
 		});
 	</script>
+		<script type="text/ng-template" id="template/ngCart/summary.html"><div class="row">
+			<ul class="icon1 sub-icon1">
+			<li><a class="active-icon c1" href="#"><i>${{ ngCart.totalCost()}}</i></a>
+				<ul class="sub-icon1 list">
+					<li> 
+					<a href="/cart.html" ng-hide="ngCart.getTotalItems() === 0">	
+						<h3>
+					    {{ ngCart.getTotalItems() }}
+					        <ng-pluralize count="ngCart.getTotalItems()" when="{1: 'item', 'other':'items'}"></ng-pluralize>
+					        <br />{{ ngCart.totalCost() | currency }}
+					    </h3>
+				    </a>
+					    <h3 ng-show="ngCart.getTotalItems() === 0">
+						    Your cart is empty
+						</h3>
+				    </li>
+					<li><p>if items in your wishlit are missing, <a href="contact.html">contact us</a> to view them</p></li>
+				</ul>
+			</li>
+		</ul>
+</script>
 </head>
-<body>
+<body ng-controller="ProductsController">
 <!-- start header -->
 <div class="header_bg">
 <div class="wrap">
@@ -35,14 +59,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<a href="index.html"><img src="images/logo.png" alt=""/> </a>
 		</div>
 		<div class="h_icon">
-		<ul class="icon1 sub-icon1">
-			<li><a class="active-icon c1" href="#"><i>$0</i></a>
-				<ul class="sub-icon1 list">
-					<li><h3>shopping cart empty</h3><a href=""></a></li>
-					<li><p>if items in your wishlit are missing, <a href="contact.html">contact us</a> to view them</p></li>
-				</ul>
-			</li>
-		</ul>
+		<ngcart-summary></ngcart-summary>
 		</div>
 		<div class="h_search">
     		<form>
@@ -101,7 +118,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<img src="images/w_pic1.jpg" alt=""/>
 					<h3>branded handbags</h3>
 					<div class="price">
-						<h4>$65<span>indulge</span></h4>
+						<h4>$65<span>buy</span></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
@@ -111,7 +128,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<img src="images/w_pic2.jpg" alt=""/>
 					<h3>branded handbags</h3>
 					<div class="price">
-						<h4>$55 <span>indulge</span></h4>
+						<h4>$55 <span>buy</span></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
@@ -121,7 +138,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<img src="images/w_pic3.jpg" alt=""/>
 					<h3>branded handbags</h3>
 					<div class="price">
-						<h4>$57<span>indulge</span></h4>
+						<h4>$57<span>buy</span></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
@@ -134,7 +151,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<img src="images/w_pic4.jpg" alt=""/>
 					<h3>branded handbags</h3>
 					<div class="price">
-						<h4>$76<span>indulge</span></h4>
+						<h4>$76<span>buy</span></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
@@ -144,7 +161,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<img src="images/w_pic5.jpg" alt=""/>
 					<h3>branded handbags</h3>
 					<div class="price">
-						<h4>$67<span>indulge</span></h4>
+						<h4>$67<span>buy</span></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
@@ -154,7 +171,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<img src="images/w_pic6.jpg" alt=""/>
 					<h3>branded handbags</h3>
 					<div class="price">
-						<h4>$68<span>indulge</span></h4>
+						<h4>$68<span>buy</span></h4>
 					</div>
 					<span class="b_btm"></span>
 				</a>
