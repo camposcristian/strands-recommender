@@ -21,7 +21,7 @@ app.controller('ProductsController', ['$http', '$scope', '$location', function($
         rec_info.recommendations.forEach(function(itemObject) {
             console.log(itemObject);
             
-            $ul.append('<li onclick="SBS.Tracking.onRecClick('+itemObject.itemId+','+'\''+rec_info.tpl+'\''+','+rec_info.rrq+');return true;"><a href="details.html?id='+itemObject.itemId+'" style="padding: 0imgpx; overflow: hidden;"><img alt="Women Shorts" title="Women Shorts" style="padding-left: 42px;margin: 0px auto; float: left; display:block;width: 40%;  height: 40%;"  src="'+itemObject.metadata.picture+'"><h3 style="float: left;text-shadow: 0 1px 0 #ffffff;    font-family: '+'\''+'bebas_neueregular'+'\''+';    color: #555555;    font-size: 20px;    margin-bottom: 10px; padding-left: 20px;padding-top: 40px;">'+itemObject.metadata.name+'</h3> </a></li>');
+            $ul.append('<li onclick="SBS.Tracking.onRecClick('+itemObject.itemId+','+'\''+rec_info.tpl+'\''+','+rec_info.rrq+');return true;"><a href="details.html?id='+itemObject.itemId+'" style="padding: 0imgpx; overflow: hidden;"><img alt="myItem" title="myItem" style="padding-left: 42px;margin: 0px auto; float: left; display:block;width: 40%;  height: 40%;"  src="'+itemObject.metadata.picture+'"><h3 style="float: left;text-shadow: 0 1px 0 #ffffff;    font-family: '+'\''+'bebas_neueregular'+'\''+';    color: #555555;    font-size: 20px;    margin-bottom: 10px; padding-left: 20px;padding-top: 40px;">'+itemObject.metadata.name+'</h3> </a></li>');
             
 
             }
@@ -52,7 +52,7 @@ app.controller('ProductsController', ['$http', '$scope', '$location', function($
       });
 
       //Launch processing
-      SBS.Recs.setRenderer(rendering_function);
+      //SBS.Recs.setRenderer(rendering_function);
       SBS.Worker.go("0eJkBiACnt");
     } catch (e) {}
 
