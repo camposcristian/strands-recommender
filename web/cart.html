@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html ng-app="Strands Demo">
 <head>
-<title>Strands Demo | Cart</title>
+<title>Strands Retail | Cart</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
@@ -29,6 +29,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		});
 	});
 </script>
+	<script type="text/ng-template" id="template/ngCart/summary.html"><div class="row">
+			<ul class="icon1 sub-icon1">
+			<li><a class="active-icon c1" href="#"><i>${{ ngCart.totalCost()}}</i></a>
+				<ul class="sub-icon1 list">
+					<li> 
+					<a href="/cart.html" ng-hide="ngCart.getTotalItems() === 0">	
+						<h3>
+					    {{ ngCart.getTotalItems() }}
+					        <ng-pluralize count="ngCart.getTotalItems()" when="{1: 'item', 'other':'items'}"></ng-pluralize>
+					        <br />{{ ngCart.totalCost() | currency }}
+					    </h3>
+				    </a>
+					    <h3 ng-show="ngCart.getTotalItems() === 0">
+						    Your cart is empty
+						</h3>
+				    </li>
+					<li><p>if items in your wishlit are missing, <a href="contact.html">contact us</a> to view them</p></li>
+				</ul>
+			</li>
+		</ul>
+</script>
 <script type="text/ng-template" id="template/ngCart/cart.html">
 	<div class="alert alert-warning" role="alert" ng-show="ngCart.getTotalItems() === 0">
 	    Your cart is empty
@@ -37,28 +58,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	    <table class="table table-striped ngCart cart">
 	        <thead>
 	        <tr>
-	            <th></th>
-	            <th></th>
-	            <th>Quantity</th>
+	            <th>Remove</th>
+	            <th>Item</th>
 	            <th>Amount</th>
+	            <th>Unit Price</th>
 	            <th>Total</th>
 	        </tr>
 	        </thead>
 	        <tfoot>
-	        <tr ng-show="ngCart.getTax()">
-	            <td></td>
-	            <td></td>
-	            <td></td>
-	            <td>Tax ({{ ngCart.getTaxRate() }}%):</td>
-	            <td>{{ ngCart.getTax() | currency }}</td>
-	        </tr>
-	        <tr ng-show="ngCart.getShipping()">
-	            <td></td>
-	            <td></td>
-	            <td></td>
-	            <td>Shipping:</td>
-	            <td>{{ ngCart.getShipping() | currency }}</td>
-	        </tr>
 	        <tr>
 	            <td></td>
 	            <td></td>
@@ -69,8 +76,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	        </tfoot>
 	        <tbody>
 	        <tr ng-repeat="item in ngCart.getCart().items track by $index">
-	            <td><span ng-click="ngCart.removeItemById(item.getId())" class="glyphicon glyphicon-remove"></span></td>
-
+	            <td><span ng-click="ngCart.removeItemById(item.getId())">X</span></td>
 	            <td>{{ item.getName() }}</td>
 	            <td><span class="glyphicon glyphicon-minus" ng-class="{'disabled':item.getQuantity()==1}"
 	                      ng-click="item.setQuantity(-1, true)"></span>&nbsp;&nbsp;
@@ -97,7 +103,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </script>
 
 </head>
-<body>
+<body ng-controller="ProductsController">
 <!-- start header -->
 <div class="header_bg">
 <div class="wrap">
@@ -106,14 +112,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<a href="index.html"><img src="images/logo.png" alt=""/> </a>
 		</div>
 		<div class="h_icon">
-		<ul class="icon1 sub-icon1">
-			<li><a class="active-icon c1" href="#"><i>$0</i></a>
-				<ul class="sub-icon1 list">
-					<li><h3>shopping cart empty</h3><a href=""></a></li>
-					<li><p>if items in your wishlit are missing, <a href="contact.html">contact us</a> to view them</p></li>
-				</ul>
-			</li>
-		</ul>
+		<ngcart-summary></ngcart-summary>
 		</div>
 		<div class="h_search">
     		<form>

@@ -808,7 +808,7 @@
     z-index: 10;
 }
 .product-img-box .product-image {
-    background: url('../images/loading.gif') center no-repeat;
+    /*background: url('../images/loading.gif') center no-repeat;*/
 } 
 @media only screen and (max-width: 1280px) {
 	.wrap{

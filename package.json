@@ -2,7 +2,10 @@
   "name": "strands-recommender",
   "version": "0.0.1",
   "devDependencies": {
+    "grunt-connect-rewrite": "^0.2.1",
+    "grunt-contrib-concat": "^0.5.1",
     "grunt-contrib-connect": "^0.10.1",
-    "grunt-contrib-watch": "^0.6.1"
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-curl": "^2.2.0"
   }
 }
