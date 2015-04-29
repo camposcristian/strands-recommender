@@ -256,7 +256,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 			   	
 			   	<div class="clear"></div>
-			   	<div class="strandsRecs" tpl="PROD-1" item="{{product.id}}"></div> 
+			   	<!--div class="strandsRecs" tpl="PROD-1" item="{{product.id}}"></div--> 
 			   	<!-- start tabs -->
 				   	<section class="tabs">
 		            <input id="tab-1" type="radio" name="radio-set" class="tab-selector-1" checked="checked">
@@ -309,11 +309,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			   	</div>
 			   	<!-- start sidebar -->
 			 <div class="left_sidebar">
+					
 					<div class="sellers">
-						<h4>Best Sellers</h4>
-						<div class="single-nav">
+						<!--h4>Best Sellers</h4-->
+						<div class="strandsRecs single-nav" tpl="PROD-1" item="{{product.id}}"></div> 
+						
+						<!-- <div class="single-nav">
 			                <ul>
-			                   <li><a href="#">Always free from repetition</a></li>
+			                   <li><a href="#"A>lways free from repetition</a></li>
 			                    <li><a href="#">Always free from repetition</a></li>
 			                    <li><a href="#">The standard chunk of Lorem Ipsum</a></li>
 			                    <li><a href="#">The standard chunk of Lorem Ipsum</a></li>
@@ -328,6 +331,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			                    <li><a href="#">Always free from repetition</a></li>			                    
 			                </ul>
 			              </div>
+ -->
 						  <div class="banner-wrap bottom_banner color_link">
 								<a href="#" class="main_link">
 								<figure><img src="images/delivery.png" alt=""></figure>
@@ -345,7 +349,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				            </div>
 			    		</div>
 					</div>
+				
 				</div>
+			
 					<!-- end sidebar -->
           	    <div class="clear"></div>
 	       </div>	
@@ -450,9 +456,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- Library placed at the end of the HTML Document, before the /body closing tag -->
 
 <script type="text/javascript" 
-   src="https://bizsolutions.strands.com/sbsstatic/js/sbsLib-1.0.min.js"></script>
+   src="https://bizsolutions.strands.com/sbsstatic/js/sbsLib-1.0.test.js"></script>
 <script type="text/javascript">
-try{
+/*try{
   //Event Definitions
   //Make sure first that the array is defined
   if (typeof StrandsTrack=="undefined"){StrandsTrack=[];}
@@ -464,7 +470,8 @@ try{
 
   //Launch processing
   SBS.Worker.go("0eJkBiACnt");
-} catch (e){};
+} catch (e){};*/
+	
 </script>
 
 

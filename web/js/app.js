@@ -5,6 +5,39 @@ app.controller('ProductsController', ['$http', '$scope', '$location', function($
     var id = parseInt(url.slice(url.indexOf("id") + 3));
     $scope.product = products[id - 1];
 
+    var rendering_function = function (rec_info){
+        console.log(rec_info);
+        console.log(rec_info.recommendations);
+        var $divStrands = $('.strandsRecs');
+        $divStrands.append('<h4>Best Sellers</h4>')
+        //$divStrands.text('asdasda') ;
+        //$divStrands.html('<ul class="giuseppe"></ul>');
+        $divStrands.append('<ul class="giuseppe">');
+        var $ul = $(".giuseppe");
+
+        
+        var callbacks = $.Callbacks();
+        var count=0;
+        rec_info.recommendations.forEach(function(itemObject) {
+            console.log(itemObject);
+            
+            $ul.append('<li onclick="SBS.Tracking.onRecClick('+itemObject.itemId+','+'\''+rec_info.tpl+'\''+','+rec_info.rrq+');return true;"><a href="details.html?id='+itemObject.itemId+'" style="padding: 0imgpx; overflow: hidden;"><img alt="Women Shorts" title="Women Shorts" style="padding-left: 42px;margin: 0px auto; float: left; display:block;width: 40%;  height: 40%;"  src="'+itemObject.metadata.picture+'"><h3 style="float: left;text-shadow: 0 1px 0 #ffffff;    font-family: '+'\''+'bebas_neueregular'+'\''+';    color: #555555;    font-size: 20px;    margin-bottom: 10px; padding-left: 20px;padding-top: 40px;">'+itemObject.metadata.name+'</h3> </a></li>');
+            
+
+            }
+        
+        );
+        
+        
+        
+
+        
+        
+        /*
+        for (index = 0; index < a.length; ++index) {
+            
+        }*/
+      };
 
     try {
       //Event Definitions
@@ -19,8 +52,15 @@ app.controller('ProductsController', ['$http', '$scope', '$location', function($
       });
 
       //Launch processing
+      SBS.Recs.setRenderer(rendering_function);
       SBS.Worker.go("0eJkBiACnt");
     } catch (e) {}
+
+
+   
+
+
+
   });
 }]);
 app.controller('CheckoutController', ['$http', '$scope', 'ngCart', function($http, $scope, ngCart) {
